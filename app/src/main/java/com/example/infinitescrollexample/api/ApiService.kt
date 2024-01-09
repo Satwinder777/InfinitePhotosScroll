@@ -9,9 +9,9 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @Headers("Authorization :Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI")
-//    @Headers("user-key: 9900a9720d31dfd5fdb4352700c")
+//    @Headers("Authorization : Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI")
+//    @Headers("Authorization", "Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI")
 
     @GET("photos") // Replace with your endpoint
-    suspend fun getUsers(@Query("page" ) age:Int): Response<PhotosResponceModel> // Replace User with your data model
+    suspend fun getUsers(@Header("Authorization") token:String?=null , @Query("page") age:Int): Response<PhotosResponceModel> // Replace User with your data model
 }
