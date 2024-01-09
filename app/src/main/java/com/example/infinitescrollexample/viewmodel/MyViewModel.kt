@@ -23,7 +23,7 @@ class MyViewModel(): ViewModel() {
 
     }
 
-    val data = Pager(PagingConfig(pageSize = 20)) {
+    val data = Pager(PagingConfig(pageSize = 1)) {
         MyPagingSource(repo)
     }.flow
 }

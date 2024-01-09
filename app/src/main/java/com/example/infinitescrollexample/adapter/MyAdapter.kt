@@ -46,7 +46,7 @@ class MyAdapter(): PagingDataAdapter<PhotosResponceModelItem, MyAdapter.MyInnerV
                 .load(item.urls.regular)
                 .placeholder(R.drawable.baseline_image_24) // Placeholder image while loading
                 .error(R.drawable.baseline_error_outline_24) // Image to display on error
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(img)
         }
     }
