@@ -11,6 +11,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.infinitescrollexample.R
 import com.example.infinitescrollexample.model.PhotosResponceModelItem
 
@@ -45,6 +46,7 @@ class MyAdapter(): PagingDataAdapter<PhotosResponceModelItem, MyAdapter.MyInnerV
                 .load(item.urls.regular)
                 .placeholder(R.drawable.baseline_image_24) // Placeholder image while loading
                 .error(R.drawable.baseline_error_outline_24) // Image to display on error
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(img)
         }
     }
