@@ -49,5 +49,8 @@ dependencies {
 //    implementation "androidx.paging:paging-runtime-ktx:3.2.1"
     // optional - for Retrofit integration
 //    implementation "androidx.paging:paging-rxjava3:3.2.1"
-    implementation "androidx.paging:paging-runtime-ktx:3.3.0-alpha02"
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+
 }
