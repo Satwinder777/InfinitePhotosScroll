@@ -1,13 +1,16 @@
 package com.example.infinitescrollexample.adapter
 
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.infinitescrollexample.R
 import com.example.infinitescrollexample.model.PhotosResponceModelItem
 
@@ -33,9 +36,16 @@ class MyAdapter(): PagingDataAdapter<PhotosResponceModelItem, MyAdapter.MyInnerV
 
     inner class MyInnerViewHolder(view:View):ViewHolder(view){
         private val textView: TextView = itemView.findViewById(R.id.satta)
+        private val img: ImageView = itemView.findViewById(R.id.myImg)
 
         fun bind(item: PhotosResponceModelItem) {
             textView.text = item.alt_description // Update with your actual data
+//            img.setImageURI(Uri.parse(item.urls.regular))
+            Glide.with(itemView.context)
+                .load(item.urls.regular)
+                .placeholder(R.drawable.baseline_image_24) // Placeholder image while loading
+                .error(R.drawable.baseline_error_outline_24) // Image to display on error
+                .into(img)
         }
     }
 
