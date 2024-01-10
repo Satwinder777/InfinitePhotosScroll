@@ -15,7 +15,7 @@ class MyRepository(private val apiService: ApiService) {
     suspend fun getPhotos(page:Int): PhotosResponceModel?{
 //        var list = arrayListOf<PhotosResponceModelItem>()
         var token = "Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI"
-        var responce = apiService.getUsers(token,page,2)
+        var responce = apiService.getUsers(token,page,20)
         if (responce.isSuccessful){
             _photosList.postValue(responce.body())
             Log.e("SherGillProduction", "getPhotos: ${responce.code()}", )
