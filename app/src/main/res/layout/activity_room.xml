@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".activity.RoomActivity">
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Entername"/>
+    <EditText
+        android:id="@+id/etRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Role"/>
+    <EditText
+        android:id="@+id/etmobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Mobile"/>
+
+    <Button
+        android:id="@+id/addbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Button"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <Button
+        android:id="@+id/deletebtnn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Button"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="155dp" />
+
+    <Button
+        android:id="@+id/updatebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Button"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <Button
+        android:id="@+id/getdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Data"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="347dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcroom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        />
+
+</LinearLayout>
