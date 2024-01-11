@@ -3,4 +3,5 @@
 <!--    -->
     <color name="black">#FFFFFFFF</color>
     <color name="white">#FF000000</color>
+    <color name="zb">#F5500000</color>
 </resources>
