@@ -1,5 +1,6 @@
 package com.example.infinitescrollexample.room.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -12,7 +13,9 @@ import com.example.infinitescrollexample.room.entity.TodoEntity
 interface TodoDao {
 
     @Query("SELECT * FROM emp_data")
-    suspend fun getAll(): List<TodoEntity>
+    fun getAll(): LiveData<List<TodoEntity>>
+    @Query("SELECT * FROM emp_data WHERE id = :userId")
+    suspend fun getUserById(userId: Int): TodoEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert( todo: TodoEntity)
@@ -20,7 +23,7 @@ interface TodoDao {
     @Delete
     suspend fun delete(todo: TodoEntity)
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateTodo(todos: TodoEntity)
 
 }
