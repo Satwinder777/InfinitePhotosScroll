@@ -11,7 +11,7 @@ interface ApiService {
 
 //    @Headers("Authorization : Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI")
 //    @Headers("Authorization", "Client-ID T3B6vHOS4CmnADT5E2vfT7h2z8_PtNm_lek_O9enSPI")
-
+//    @Header("Authorization") token:String?=null ,
     @GET("photos") // Replace with your endpoint
-    suspend fun getUsers(@Header("Authorization") token:String?=null , @Query("page") page:Int, @Query("per_page") per_page:Int): Response<PhotosResponceModel> // Replace User with your data model
+    suspend fun getUsers( @Query("page") page:Int, @Query("per_page") per_page:Int): Response<PhotosResponceModel> // Replace User with your data model
 }

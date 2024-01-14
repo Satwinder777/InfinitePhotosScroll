@@ -9,11 +9,15 @@ import com.example.infinitescrollexample.api.RetrofitClient
 import com.example.infinitescrollexample.model.PhotosResponceModel
 import com.example.infinitescrollexample.paging.MyPagingSource
 import com.example.infinitescrollexample.repository.MyRepository
+import com.example.infinitescrollexample.repository.MyRepositoryImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Retrofit
+import javax.inject.Inject
 
-class MyViewModel(): ViewModel() {
+@HiltViewModel
+class MyViewModel @Inject constructor(private val repo: MyRepositoryImpl): ViewModel() {
 
-    var repo = MyRepository(RetrofitClient.apiService)
+//    var repo = MyRepository(RetrofitClient.apiService)
 
      var livePhotoslist :LiveData<PhotosResponceModel> = repo.photosList
 

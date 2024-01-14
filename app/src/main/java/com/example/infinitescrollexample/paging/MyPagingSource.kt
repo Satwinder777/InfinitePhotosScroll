@@ -14,7 +14,7 @@ class MyPagingSource(private val repo: MyRepository): PagingSource<Int, PhotosRe
         val page = params.key ?: 1
         val responseq = repo.getPhotos(page)
         // Handle network errors and API responses appropriately
-        Log.e("satta213", "load: $page" , )
+        Log.e("satta213", "load: $page>>$responseq" , )
         return LoadResult.Page(
             data = responseq?.toList()!!,
             prevKey = if (page == 1) null else page - 1 ,

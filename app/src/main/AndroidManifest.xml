@@ -27,8 +27,16 @@
         <activity
             android:name=".activity.RoomActivity"
             android:exported="false">
-
         </activity>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="@string/razorpaykey"
+            />
+
+        <meta-data
+            android:name="com.google.gms.wallet.api.enabled"
+            android:value="true"/>
     </application>
 
 </manifest>
