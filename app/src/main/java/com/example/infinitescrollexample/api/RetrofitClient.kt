@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://api.unsplash.com/" // Replace with your base URL
+    const val BASE_URL = "https://api.unsplash.com/" // Replace with your base URL
 
     val apiService: ApiService by lazy {
         Retrofit.Builder()
